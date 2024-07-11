@@ -13,13 +13,14 @@ function openModal(content) {
     `;
 
   let contentContainer = document.createElement("div");
+  contentContainer.id = "contentContainer";
   contentContainer.style.cssText = `
         max-width:500px;
         margin: 15px;
         background-color:white;
         position:relative;
         max-height: 90%;
-        overflow-y: scroll;
+        overflow-y: ${window.innerHeight < 564 ? "scroll" : "unset"};
    `;
 
   let closeButton = document.createElement("div");
@@ -34,6 +35,7 @@ function openModal(content) {
     top:24px;
     background:white;
     border-radius:10px;
+    cursor: pointer;
    `;
 
   closeButton.innerHTML = `
@@ -172,6 +174,8 @@ function loginForm() {
         padding: 18px 0;
         border-radius: 4px;
         margin-bottom: 4px;
+        cursor: pointer;
+
     `;
   let registrationBtn = document.createElement("button");
   registrationBtn.textContent = "Зарегестрироваться";
@@ -185,6 +189,7 @@ function loginForm() {
         padding: 18px 0;
         border: 1px solid rgba(36, 76, 152, 1);
         border-radius: 4px;
+        cursor: pointer;
     `;
 
   form.append(
