@@ -2,8 +2,15 @@
 *{
     box-sizing: border-box;
 }
+
+::placeholder{
+    color: rgba(31, 66, 132, 1);
+}
 body{
     font-family: "Manrope";
+    position: relative;
+    height: 100vh;
+    
 }
 
 button{
@@ -15,13 +22,17 @@ button{
 
 .container{
     width: 100%;
-    padding: 24px 14px;
+    padding: 14px 24px;
 
 }
 
 .content{
     width: 100%;
     background-color: rgba(240, 244, 252, 1);
+}
+.content_demo{
+    display: flex;
+    flex-direction: column;
 }
 
 .content_description-block{
@@ -39,6 +50,7 @@ button{
     font-size: 0.81rem;
     line-height: 1.25rem;
     color: rgba(114, 114, 114, 1);
+    margin-bottom: 18px;
 }
 
 .content_button{
@@ -58,9 +70,67 @@ button{
 .content_image-block{
     width: 100%;
     height: 220px;
-    /* background-image: url('./public/image-15.webp') ;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background: url('./public/image 15.png') no-repeat center;
+    background: url('./public/image-15.webp') no-repeat center;
     background-size: cover;
+}
+
+@media only screen and (min-width: 768px) {
+    .content_button {
+        width: 261px;
+    }
+    .content_title {
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+
+    .content_text {
+        font-size:0.93rem;
+        line-height: 1.5rem;
+        margin-bottom: 24px;
+        max-width: 672px;
+    }
+    .content_image-block {
+        height: 360px;
+    }
+}
+
+/* Стили для экранов шириной от 800px (ноутбуки) */
+@media only screen and (min-width: 1440px) {
+    .container {
+        padding: 36px 40px;
+    
+    }
+    .content_demo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .content_description-block{
+        padding: 105px 72px;
+        width: 52%;
+    }
+
+    .content_image-block {
+        height: auto;
+        width: 48%;
+    }
+
+    .content_title {
+        font-size: 1.625rem;
+        line-height: 2.56rem;
+    }
+    
+    .content_text {
+        font-size: 1.06rem;
+        line-height: 1.68rem;
+        margin-bottom:36px;
+        width: 538px;
+    }
+
+    .content_button {
+        width: 341px;
+        font-size: 1.125rem;
+        padding: 19px 12px 19px 24px;
+    }
 }
