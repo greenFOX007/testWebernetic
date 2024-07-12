@@ -1,6 +1,6 @@
 function openModal(content) {
-  let owerlay = document.createElement("div");
-  owerlay.style.cssText = `
+  let overlay = document.createElement("div");
+  overlay.style.cssText = `
         position:absolute;
         top:0;
         bottom:0;
@@ -48,19 +48,19 @@ function openModal(content) {
 
   contentContainer.append(content, closeButton);
 
-  owerlay.appendChild(contentContainer);
+  overlay.appendChild(contentContainer);
 
-  document.body.appendChild(owerlay);
+  document.body.appendChild(overlay);
 
-  owerlay.addEventListener("click", (e) => {
-    if (e.target == owerlay) {
-      owerlay.remove();
+  overlay.addEventListener("click", (e) => {
+    if (e.target == overlay) {
+      overlay.remove();
       document.body.style.overflow = "unset";
     }
   });
 
   closeButton.addEventListener("click", () => {
-    owerlay.remove();
+    overlay.remove();
     document.body.style.overflow = "unset";
   });
 }
@@ -142,7 +142,7 @@ function loginForm() {
 
   checkBoxLabel.style.cssText = `
         font-size:18px;
-        line-heigh:24px;
+       line-height:24px;
         font-weight:400;
         color:rgba(50, 50, 50, 1);
     `;
@@ -155,7 +155,7 @@ function loginForm() {
   restorePass.style.cssText = `
   display:inline-block;
         font-size:20px;
-        line-heigh:27px;
+       line-height:27px;
         font-weight:500;
         color:rgba(36, 76, 152, 1);
         text-decoration:none;
@@ -166,7 +166,7 @@ function loginForm() {
   submitBtn.textContent = "Войти";
   submitBtn.style.cssText = `
         font-size:18px;
-        line-heigh:27px;
+       line-height:27px;
         font-weight:500;
         color:rgba(255, 255, 255, 1);
         width:100%;
@@ -178,10 +178,10 @@ function loginForm() {
 
     `;
   let registrationBtn = document.createElement("button");
-  registrationBtn.textContent = "Зарегестрироваться";
+  registrationBtn.textContent = "Зарегистрироваться";
   registrationBtn.style.cssText = `
         font-size:18px;
-        line-heigh:27px;
+       line-height:27px;
         font-weight:500;
         color:rgba(36, 76, 152, 1);
         width:100%;
@@ -210,8 +210,6 @@ function loginForm() {
   });
   return formContainer;
 }
-
-// openModal(loginForm());
 
 document.getElementById("open-modal").addEventListener("click", () => {
   openModal(loginForm());
